@@ -9,7 +9,12 @@ struct player {
 };
 
 struct playerBody {
+   xCoordinate = playerBody + 0x48;
    zCoordinate = playerBody + 0x4C;
+   yCoordinate = playerBody + 0x50;
+
+   cosineOfYawAngle = playerBody + 0x160;
+   sinusOfYawAngle = playerBody + 0x168;
 
    forwardVector = playerBody + 0x88;
    sideVector = playerBody + 0x8C;
