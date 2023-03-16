@@ -1,7 +1,7 @@
 ﻿
 namespace GTA3Trainer
 {
-    partial class MainWindow
+    partial class GTA3
     {
         /// <summary>
         /// Required designer variable.
@@ -107,7 +107,7 @@ namespace GTA3Trainer
             this.label1.TabIndex = 10;
             this.label1.Text = "Noclip";
             // 
-            // MainWindow
+            // GTA3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,7 +120,7 @@ namespace GTA3Trainer
             this.Controls.Add(this.button_OpenCloseProcess);
             this.MaximumSize = new System.Drawing.Size(356, 489);
             this.MinimumSize = new System.Drawing.Size(356, 489);
-            this.Name = "MainWindow";
+            this.Name = "GTA3";
             this.Text = "GTA3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.ResumeLayout(false);

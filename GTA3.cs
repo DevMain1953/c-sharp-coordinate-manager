@@ -6,7 +6,7 @@ using KeyboardManagement;
 
 namespace GTA3Trainer
 {
-    public partial class MainWindow : Form
+    public partial class GTA3 : Form
     {
         private readonly MemoryManagerFor32BitProcesses memoryManager;
         private readonly int[] offsetsInBytes = new int[5];
@@ -161,7 +161,7 @@ namespace GTA3Trainer
             return Convert.ToSingle(speedOfObject);
         }
 
-        public MainWindow()
+        public GTA3()
         {
             InitializeComponent();
             memoryManager = new MemoryManagerFor32BitProcesses();

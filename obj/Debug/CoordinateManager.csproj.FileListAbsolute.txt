@@ -1,0 +1,10 @@
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\bin\Debug\GTA3Trainer.exe.config
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\bin\Debug\GTA3Trainer.exe
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\bin\Debug\GTA3Trainer.pdb
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.csproj.AssemblyReference.cache
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\GTA3Trainer.Properties.Resources.resources
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.csproj.GenerateResource.cache
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.csproj.CoreCompileInputs.cache
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\GTA3Trainer.exe
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\GTA3Trainer.pdb
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\GTA3Trainer.GTA3.resources
