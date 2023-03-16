@@ -7,7 +7,7 @@ struct car {
    	cosineOfYawAngle = car + 0x18;
 
 	sinusOfRollAngle = car + 0xC;
-   -sinusOfPitchAngle = car + 0x1C;
+	-sinusOfPitchAngle = car + 0x1C;
 
 	xVector = car + 0x78;
 	yVector = car + 0x7C;
