@@ -1,0 +1,10 @@
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\bin\Debug\GTA3Trainer.exe.config
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\bin\Debug\GTA3Trainer.exe
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\bin\Debug\GTA3Trainer.pdb
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\obj\Debug\NoclipMaker.csproj.AssemblyReference.cache
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\obj\Debug\GTA3Trainer.MainWindow.resources
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\obj\Debug\GTA3Trainer.Properties.Resources.resources
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\obj\Debug\NoclipMaker.csproj.GenerateResource.cache
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\obj\Debug\NoclipMaker.csproj.CoreCompileInputs.cache
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\obj\Debug\GTA3Trainer.exe
+F:\STUDENT_DAYS\4_COURSE\C#\NoclipMaker\obj\Debug\GTA3Trainer.pdb
