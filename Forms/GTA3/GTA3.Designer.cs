@@ -1,5 +1,5 @@
 ﻿
-namespace GTA3Trainer
+namespace CoordinateManager.Forms.GTA3
 {
     partial class GTA3
     {

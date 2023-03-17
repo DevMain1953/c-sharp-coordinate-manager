@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using MemoryManagement;
 using KeyboardManagement;
 
-namespace GTA3Trainer
+namespace CoordinateManager.Forms.GTA3
 {
     public partial class GTA3 : Form
     {

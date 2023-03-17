@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GTA3Trainer
+namespace CoordinateManager
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace GTA3Trainer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GTA3());
+            Application.Run(new Forms.GTA3.GTA3());
         }
     }
 }

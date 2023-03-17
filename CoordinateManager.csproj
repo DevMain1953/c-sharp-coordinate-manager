@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9EA2EA0A-02BE-4D2A-BCBA-833CDEC75ED3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GTA3Trainer</RootNamespace>
-    <AssemblyName>GTA3Trainer</AssemblyName>
+    <RootNamespace>CoordinateManager</RootNamespace>
+    <AssemblyName>CoordinateManager</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,10 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GTA3.cs">
+    <Compile Include="Forms\AmnesiaTDD\AmnesiaTDD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GTA3.Designer.cs">
+    <Compile Include="Forms\AmnesiaTDD\AmnesiaTDD.Designer.cs">
+      <DependentUpon>AmnesiaTDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GTA3\GTA3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GTA3\GTA3.Designer.cs">
       <DependentUpon>GTA3.cs</DependentUpon>
     </Compile>
     <Compile Include="KeyboardAndMemoryManagement\KeyboardManager.cs" />
@@ -57,7 +63,10 @@
     <Compile Include="KeyboardAndMemoryManagement\WinAPI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GTA3.resx">
+    <EmbeddedResource Include="Forms\AmnesiaTDD\AmnesiaTDD.resx">
+      <DependentUpon>AmnesiaTDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GTA3\GTA3.resx">
       <DependentUpon>GTA3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -68,6 +77,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -82,5 +92,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
