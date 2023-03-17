@@ -38,15 +38,14 @@ namespace CoordinateManager.Forms.AmnesiaTDD
 
         private void ManageZCoordinateOfPlayer()
         {
+            float zCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayerBody + 0x4C, 4).ConvertBytesToFloatValue();
             if (KeyboardManager.IsKeyPushedDown(codeOfLeftMouseButton))
             {
-                float zCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayerBody + 0x4C, 4).ConvertBytesToFloatValue();
                 zCoordinate = zCoordinate + 0.5f;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayerBody + 0x4C, 4);
             }
             if (KeyboardManager.IsKeyPushedDown(codeOfRightMouseButton))
             {
-                float zCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayerBody + 0x4C, 4).ConvertBytesToFloatValue();
                 zCoordinate = zCoordinate - 0.5f;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayerBody + 0x4C, 4);
             }

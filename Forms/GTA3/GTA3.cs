@@ -124,15 +124,14 @@ namespace CoordinateManager.Forms.GTA3
 
         private void ManageZCoordinateOfPlayer()
         {
+            float zCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x3C, 4).ConvertBytesToFloatValue();
             if (KeyboardManager.IsKeyPushedDown(codeOfLeftMouseButton))
             {
-                float zCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x3C, 4).ConvertBytesToFloatValue();
                 zCoordinate = zCoordinate + 1.0f;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x3C, 4);
             }
             if (KeyboardManager.IsKeyPushedDown(codeOfRightMouseButton))
             {
-                float zCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x3C, 4).ConvertBytesToFloatValue();
                 zCoordinate = zCoordinate - 1.0f;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x3C, 4);
             }
