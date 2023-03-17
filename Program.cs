@@ -16,7 +16,7 @@ namespace CoordinateManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.GTA3.GTA3());
+            Application.Run(new Forms.AmnesiaTDD.AmnesiaTDD());
         }
     }
 }
