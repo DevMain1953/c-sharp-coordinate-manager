@@ -56,7 +56,7 @@ namespace MemoryManagement
             WriteProcessMemory(_processHandle, (IntPtr)address, _bytes, numberOfBytesToWrite, out numberOfWrittenBytes);
         }
 
-        public int GetTargetAddressByPointersUsingOffsets(int[] offsetsInBytes, int baseAddressFromWhereToStartSearch, IntPtr processHandle)
+        public int GetTargetAddressByPointersUsingOffsets(int[] offsetsInBytes, int baseAddressFromWhereToStartSearch)
         {
             int sizeOfTargetAddressInBytes = 4;
             byte[] buffer = new byte[sizeOfTargetAddressInBytes];
@@ -64,12 +64,12 @@ namespace MemoryManagement
             int nextPointerAddress = 0;
             int nextFoundValue = 0;
 
-            ReadProcessMemory(processHandle, (IntPtr)baseAddressFromWhereToStartSearch, buffer, sizeOfTargetAddressInBytes, out numberOfReadBytes);
+            ReadProcessMemory(_processHandle, (IntPtr)baseAddressFromWhereToStartSearch, buffer, sizeOfTargetAddressInBytes, out numberOfReadBytes);
             for (int i = 0; i < offsetsInBytes.Length; i++)
             {
                 nextFoundValue = BitConverter.ToInt32(buffer, 0);
                 nextPointerAddress = nextFoundValue + offsetsInBytes[i];
-                ReadProcessMemory(processHandle, (IntPtr)nextPointerAddress, buffer, sizeOfTargetAddressInBytes, out numberOfReadBytes);
+                ReadProcessMemory(_processHandle, (IntPtr)nextPointerAddress, buffer, sizeOfTargetAddressInBytes, out numberOfReadBytes);
             }
             return nextPointerAddress;
         }
