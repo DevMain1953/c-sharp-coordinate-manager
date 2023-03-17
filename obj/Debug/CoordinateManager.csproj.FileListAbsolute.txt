@@ -9,3 +9,4 @@ F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManag
 F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.pdb
 F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.Forms.AmnesiaTDD.AmnesiaTDD.resources
 F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.Forms.GTA3.GTA3.resources
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.Forms.WALLE.WALLE.resources

@@ -58,6 +58,12 @@
     <Compile Include="Forms\GTA3\GTA3.Designer.cs">
       <DependentUpon>GTA3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WALLE\WALLE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WALLE\WALLE.Designer.cs">
+      <DependentUpon>WALLE.cs</DependentUpon>
+    </Compile>
     <Compile Include="KeyboardAndMemoryManagement\KeyboardManager.cs" />
     <Compile Include="KeyboardAndMemoryManagement\MemoryManagerFor32BitProcesses.cs" />
     <Compile Include="KeyboardAndMemoryManagement\WinAPI.cs" />
@@ -68,6 +74,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GTA3\GTA3.resx">
       <DependentUpon>GTA3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WALLE\WALLE.resx">
+      <DependentUpon>WALLE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
