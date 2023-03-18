@@ -104,7 +104,7 @@ namespace CoordinateManager.Forms.WALLE
 
             if (KeyboardManager.IsKeyPushedDown(codeOfWKey))
             {
-                float newXCoordinate = xCoordinate - ((sinusOfYawAngle) * multiplierOfPlayerSpeed);
+                float newXCoordinate = xCoordinate - (sinusOfYawAngle * multiplierOfPlayerSpeed);
                 float newYCoordinate = yCoordinate + (cosineOfYawAngle * multiplierOfPlayerSpeed);
 
                 memoryManager.ConvertFloatValueToBytes(newXCoordinate).WriteBytesToAddress(baseAddressOfPlayerBody + 0x18, 4);
