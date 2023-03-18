@@ -10,4 +10,4 @@ struct player {
 	yawAngleInDegrees = player + (0x2 * 0x4) + 0xAC;
 };
 
-[0152BC64] = structure_of_player;
+structure_of_player = getAddressFrom(0x0152BC64);
