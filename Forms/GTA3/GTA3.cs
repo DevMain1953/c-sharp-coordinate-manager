@@ -91,7 +91,7 @@ namespace CoordinateManager.Forms.GTA3
 
         private void MoveCar()
         {
-            float sinusOfYawAngle = memoryManager.ReadBytesFromAddress(baseAddressOfCar + 0x14, 4).ConvertBytesToFloatValue();
+            float sineOfYawAngle = memoryManager.ReadBytesFromAddress(baseAddressOfCar + 0x14, 4).ConvertBytesToFloatValue();
             float cosineOfYawAngle = memoryManager.ReadBytesFromAddress(baseAddressOfCar + 0x18, 4).ConvertBytesToFloatValue();
             float xVelocityOfCar = memoryManager.ReadBytesFromAddress(baseAddressOfCar + 0x78, 4).ConvertBytesToFloatValue();
             float yVelocityOfCar = memoryManager.ReadBytesFromAddress(baseAddressOfCar + 0x7C, 4).ConvertBytesToFloatValue();
@@ -101,7 +101,7 @@ namespace CoordinateManager.Forms.GTA3
             {
                 if (speedOfCar < 1.8f)
                 {
-                    float newXVelocityOfCar = xVelocityOfCar - ((sinusOfYawAngle * -1) * multiplierOfCarSpeed);
+                    float newXVelocityOfCar = xVelocityOfCar - ((sineOfYawAngle * -1) * multiplierOfCarSpeed);
                     float newYVelocityOfCar = yVelocityOfCar + (cosineOfYawAngle * multiplierOfCarSpeed);
 
                     memoryManager.ConvertFloatValueToBytes(newXVelocityOfCar).WriteBytesToAddress(baseAddressOfCar + 0x78, 4);
@@ -139,14 +139,14 @@ namespace CoordinateManager.Forms.GTA3
 
         private void MovePlayer()
         {
-            float sinusOfYawAngle = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x14, 4).ConvertBytesToFloatValue();
+            float sineOfYawAngle = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x14, 4).ConvertBytesToFloatValue();
             float cosineOfYawAngle = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x18, 4).ConvertBytesToFloatValue();
             float xCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x34, 4).ConvertBytesToFloatValue();
             float yCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x38, 4).ConvertBytesToFloatValue();
 
             if (KeyboardManager.IsKeyPushedDown(codeOfWKey))
             {
-                float newXCoordinate = xCoordinate - ((sinusOfYawAngle * -1) * multiplierOfPlayerSpeed);
+                float newXCoordinate = xCoordinate - ((sineOfYawAngle * -1) * multiplierOfPlayerSpeed);
                 float newYCoordinate = yCoordinate + (cosineOfYawAngle * multiplierOfPlayerSpeed);
 
                 memoryManager.ConvertFloatValueToBytes(newXCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x34, 4);

@@ -16,7 +16,7 @@ namespace CoordinateManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.COD1.COD1());
+            Application.Run(new Forms.AmnesiaTDD.AmnesiaTDD());
         }
     }
 }

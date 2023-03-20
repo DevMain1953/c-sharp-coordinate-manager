@@ -97,14 +97,14 @@ namespace CoordinateManager.Forms.WALLE
 
         private void MovePlayer()
         {
-            float sinusOfYawAngle = memoryManager.ReadBytesFromAddress(baseAddressOfPlayerBody + 0x4, 4).ConvertBytesToFloatValue();
+            float sineOfYawAngle = memoryManager.ReadBytesFromAddress(baseAddressOfPlayerBody + 0x4, 4).ConvertBytesToFloatValue();
             float cosineOfYawAngle = memoryManager.ReadBytesFromAddress(baseAddressOfPlayerBody + 0xC, 4).ConvertBytesToFloatValue();
             float xCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayerBody + 0x18, 4).ConvertBytesToFloatValue();
             float yCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayerBody + 0x10, 4).ConvertBytesToFloatValue();
 
             if (KeyboardManager.IsKeyPushedDown(codeOfWKey))
             {
-                float newXCoordinate = xCoordinate - (sinusOfYawAngle * multiplierOfPlayerSpeed);
+                float newXCoordinate = xCoordinate - (sineOfYawAngle * multiplierOfPlayerSpeed);
                 float newYCoordinate = yCoordinate + (cosineOfYawAngle * multiplierOfPlayerSpeed);
 
                 memoryManager.ConvertFloatValueToBytes(newXCoordinate).WriteBytesToAddress(baseAddressOfPlayerBody + 0x18, 4);
