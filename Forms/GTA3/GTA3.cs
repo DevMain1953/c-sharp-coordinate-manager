@@ -69,7 +69,7 @@ namespace CoordinateManager.Forms.GTA3
                 {
                     yawAngleInDegrees = yawAngleInDegrees * -1;
                 }
-                yawAngleInDegrees = yawAngleInDegrees + (1 * Convert.ToSingle(0.05));
+                yawAngleInDegrees = yawAngleInDegrees + (1 * Convert.ToSingle(1.0));
             }
 
             if (KeyboardManager.IsKeyPushedDown(codeOfAKey))
@@ -78,15 +78,20 @@ namespace CoordinateManager.Forms.GTA3
                 {
                     yawAngleInDegrees = yawAngleInDegrees * -1;
                 }
-                yawAngleInDegrees = yawAngleInDegrees - (1 * Convert.ToSingle(0.05));
+                yawAngleInDegrees = yawAngleInDegrees - (1 * Convert.ToSingle(1.0));
             }
             ManageYawAngleOfCarToFlipItOver();
 
-            float newSinusOfYawAngle = Convert.ToSingle(Math.Sin(yawAngleInDegrees));
-            float newCosineOfYawAngle = Convert.ToSingle(Math.Cos(yawAngleInDegrees));
+            float newSinusOfYawAngle = Convert.ToSingle(Math.Sin(GetAngleInRadiansFromAngleInDegrees(yawAngleInDegrees)));
+            float newCosineOfYawAngle = Convert.ToSingle(Math.Cos(GetAngleInRadiansFromAngleInDegrees(yawAngleInDegrees)));
 
             memoryManager.ConvertFloatValueToBytes(newSinusOfYawAngle).WriteBytesToAddress(baseAddressOfCar + 0x14, 4);
             memoryManager.ConvertFloatValueToBytes(newCosineOfYawAngle).WriteBytesToAddress(baseAddressOfCar + 0x18, 4);
+        }
+
+        private float GetAngleInRadiansFromAngleInDegrees(float angleInDegrees)
+        {
+            return Convert.ToSingle((Math.PI / 180) * angleInDegrees);
         }
 
         private void MoveCar()

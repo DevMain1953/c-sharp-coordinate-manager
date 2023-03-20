@@ -75,7 +75,7 @@ namespace CoordinateManager.Forms.WALLE
                 {
                     yawAngleInDegrees = yawAngleInDegrees * -1;
                 }
-                yawAngleInDegrees = yawAngleInDegrees + (1 * Convert.ToSingle(0.05));
+                yawAngleInDegrees = yawAngleInDegrees + (1 * Convert.ToSingle(1.0));
             }
 
             if (KeyboardManager.IsKeyPushedDown(codeOfAKey))
@@ -84,15 +84,20 @@ namespace CoordinateManager.Forms.WALLE
                 {
                     yawAngleInDegrees = yawAngleInDegrees * -1;
                 }
-                yawAngleInDegrees = yawAngleInDegrees - (1 * Convert.ToSingle(0.05));
+                yawAngleInDegrees = yawAngleInDegrees - (1 * Convert.ToSingle(1.0));
             }
             ManageYawAngleOfPlayerToFlipItOver();
 
-            float newSinusOfYawAngle = Convert.ToSingle(Math.Sin(yawAngleInDegrees));
-            float newCosineOfYawAngle = Convert.ToSingle(Math.Cos(yawAngleInDegrees));
+            float newSinusOfYawAngle = Convert.ToSingle(Math.Sin(GetAngleInRadiansFromAngleInDegrees(yawAngleInDegrees)));
+            float newCosineOfYawAngle = Convert.ToSingle(Math.Cos(GetAngleInRadiansFromAngleInDegrees(yawAngleInDegrees)));
 
             memoryManager.ConvertFloatValueToBytes(newSinusOfYawAngle).WriteBytesToAddress(baseAddressOfPlayerBody + 0xC, 4);
             memoryManager.ConvertFloatValueToBytes(newCosineOfYawAngle).WriteBytesToAddress(baseAddressOfPlayerBody + 0x4, 4);
+        }
+
+        private float GetAngleInRadiansFromAngleInDegrees(float angleInDegrees)
+        {
+            return Convert.ToSingle((Math.PI / 180) * angleInDegrees);
         }
 
         private void MovePlayer()
