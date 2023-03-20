@@ -52,6 +52,12 @@
     <Compile Include="Forms\AmnesiaTDD\AmnesiaTDD.Designer.cs">
       <DependentUpon>AmnesiaTDD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\COD1\COD1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\COD1\COD1.Designer.cs">
+      <DependentUpon>COD1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GTA3\GTA3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AmnesiaTDD\AmnesiaTDD.resx">
       <DependentUpon>AmnesiaTDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\COD1\COD1.resx">
+      <DependentUpon>COD1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GTA3\GTA3.resx">
       <DependentUpon>GTA3.cs</DependentUpon>
