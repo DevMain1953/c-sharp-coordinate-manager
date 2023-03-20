@@ -11,3 +11,4 @@ F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManag
 F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.Forms.GTA3.GTA3.resources
 F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.Forms.WALLE.WALLE.resources
 F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.Forms.COD1.COD1.resources
+F:\STUDENT_DAYS\4_COURSE\C#\c-sharp-coordinate-manager\obj\Debug\CoordinateManager.Forms.CODMW2.CODMW2.resources
