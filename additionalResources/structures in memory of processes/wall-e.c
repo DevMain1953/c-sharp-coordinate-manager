@@ -8,7 +8,7 @@ struct playerBody {
 	yCoordinate = playerBody + 0x18;
 
 	cosineOfYawAngle = playerBody + 0x4;
-	sinusOfYawAngle = playerBody + 0xC;
+	sineOfYawAngle = playerBody + 0xC;
 
    	xVector = playerBody + 0x30;
 	zVector = playerBody + 0x34;

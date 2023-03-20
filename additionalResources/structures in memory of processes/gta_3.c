@@ -3,11 +3,11 @@ struct car {
 	yCoordinate = car + 0x38;
 	zCoordinate = car + 0x3C;
 
-	sinusOfYawAngle = car + 0x14;
+	sineOfYawAngle = car + 0x14;
    	cosineOfYawAngle = car + 0x18;
 
-	sinusOfRollAngle = car + 0xC;
-	-sinusOfPitchAngle = car + 0x1C;
+	sineOfRollAngle = car + 0xC;
+	-sineOfPitchAngle = car + 0x1C;
 
 	xVector = car + 0x78;
 	yVector = car + 0x7C;
@@ -24,7 +24,7 @@ struct player {
 	yCoordinate = player + 0x38;
 	zCoordinate = player + 0x3C;
 
-	sinusOfYawAngle = car + 0x14;
+	sineOfYawAngle = car + 0x14;
    	cosineOfYawAngle = car + 0x18;
 	
 	xVector = player + 0x78;

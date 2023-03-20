@@ -15,11 +15,11 @@ struct carBody {
 	yCoordinate = carBody + 0x34;
 	zCoordinate = carBody + 0x38;
 
-   sinusOfYawAngle = carBody + 0x10;
+   sineOfYawAngle = carBody + 0x10;
    cosineOfYawAngle = carBody + 0x14;
 
-   sinusOfRollAngle = carBody + 0x8;
-   -sinusOfPitchAngle = carBody + 0x18;
+   sineOfRollAngle = carBody + 0x8;
+   -sineOfPitchAngle = carBody + 0x18;
 };
 
 struct player {
