@@ -58,11 +58,23 @@
     <Compile Include="Forms\COD1\COD1.Designer.cs">
       <DependentUpon>COD1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\COD4MW\COD4MW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\COD4MW\COD4MW.Designer.cs">
+      <DependentUpon>COD4MW.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CODMW2\CODMW2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CODMW2\CODMW2.Designer.cs">
       <DependentUpon>CODMW2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CODMW3\CODMW3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CODMW3\CODMW3.Designer.cs">
+      <DependentUpon>CODMW3.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GTA3\GTA3.cs">
       <SubType>Form</SubType>
@@ -87,8 +99,14 @@
     <EmbeddedResource Include="Forms\COD1\COD1.resx">
       <DependentUpon>COD1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\COD4MW\COD4MW.resx">
+      <DependentUpon>COD4MW.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CODMW2\CODMW2.resx">
       <DependentUpon>CODMW2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CODMW3\CODMW3.resx">
+      <DependentUpon>CODMW3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GTA3\GTA3.resx">
       <DependentUpon>GTA3.cs</DependentUpon>

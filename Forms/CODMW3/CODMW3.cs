@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using MemoryManagement;
 using KeyboardManagement;
 
-namespace CoordinateManager.Forms.CODMW2
+namespace CoordinateManager.Forms.CODMW3
 {
-    public partial class CODMW2 : Form
+    public partial class CODMW3 : Form
     {
         private readonly MemoryManagerFor32BitProcesses memoryManager;
         private int baseAddressOfPlayer = 0;
@@ -53,7 +53,7 @@ namespace CoordinateManager.Forms.CODMW2
 
         private void MovePlayer()
         {
-            float yawAngleInDegrees = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x10C, 4).ConvertBytesToFloatValue();
+            float yawAngleInDegrees = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x110, 4).ConvertBytesToFloatValue();
             float xCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x20, 4).ConvertBytesToFloatValue();
             float yCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x1C, 4).ConvertBytesToFloatValue();
 
@@ -70,7 +70,7 @@ namespace CoordinateManager.Forms.CODMW2
             }
         }
 
-        public CODMW2()
+        public CODMW3()
         {
             InitializeComponent();
             memoryManager = new MemoryManagerFor32BitProcesses();
@@ -78,7 +78,7 @@ namespace CoordinateManager.Forms.CODMW2
 
         private void timer_loopExecutor_Tick(object sender, EventArgs e)
         {
-            baseAddressOfPlayer = memoryManager.ReadBytesFromAddress(0x010A7190, 4).ConvertBytesToIntegerValue();
+            baseAddressOfPlayer = memoryManager.ReadBytesFromAddress(0x012C0748, 4).ConvertBytesToIntegerValue();
             if (isNoclipEnabled)
             {
                 FreezeXYZVelocityOfPlayer();
@@ -116,7 +116,7 @@ namespace CoordinateManager.Forms.CODMW2
             }
             else
             {
-                memoryManager.FindProcessByNameThenAttachToIt("iw4sp");
+                memoryManager.FindProcessByNameThenAttachToIt("iw5sp");
                 timer_loopExecutor.Enabled = true;
 
                 button_OpenCloseProcess.ForeColor = Color.Red;

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using MemoryManagement;
 using KeyboardManagement;
 
-namespace CoordinateManager.Forms.CODMW2
+namespace CoordinateManager.Forms.COD4MW
 {
-    public partial class CODMW2 : Form
+    public partial class COD4MW : Form
     {
         private readonly MemoryManagerFor32BitProcesses memoryManager;
         private int baseAddressOfPlayer = 0;
@@ -53,7 +53,7 @@ namespace CoordinateManager.Forms.CODMW2
 
         private void MovePlayer()
         {
-            float yawAngleInDegrees = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x10C, 4).ConvertBytesToFloatValue();
+            float yawAngleInDegrees = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0xE8, 4).ConvertBytesToFloatValue();
             float xCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x20, 4).ConvertBytesToFloatValue();
             float yCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x1C, 4).ConvertBytesToFloatValue();
 
@@ -70,7 +70,7 @@ namespace CoordinateManager.Forms.CODMW2
             }
         }
 
-        public CODMW2()
+        public COD4MW()
         {
             InitializeComponent();
             memoryManager = new MemoryManagerFor32BitProcesses();
@@ -78,28 +78,12 @@ namespace CoordinateManager.Forms.CODMW2
 
         private void timer_loopExecutor_Tick(object sender, EventArgs e)
         {
-            baseAddressOfPlayer = memoryManager.ReadBytesFromAddress(0x010A7190, 4).ConvertBytesToIntegerValue();
+            baseAddressOfPlayer = memoryManager.ReadBytesFromAddress(0x00E18E18, 4).ConvertBytesToIntegerValue();
             if (isNoclipEnabled)
             {
                 FreezeXYZVelocityOfPlayer();
                 ManageZCoordinateOfPlayer();
                 MovePlayer();
-            }
-        }
-
-        private void button_Noclip_Click(object sender, EventArgs e)
-        {
-            if (isNoclipEnabled)
-            {
-                isNoclipEnabled = false;
-                button_Noclip.ForeColor = Color.Black;
-                button_Noclip.Text = "ON";
-            }
-            else
-            {
-                isNoclipEnabled = true;
-                button_Noclip.ForeColor = Color.Red;
-                button_Noclip.Text = "OFF";
             }
         }
 
@@ -116,12 +100,28 @@ namespace CoordinateManager.Forms.CODMW2
             }
             else
             {
-                memoryManager.FindProcessByNameThenAttachToIt("iw4sp");
+                memoryManager.FindProcessByNameThenAttachToIt("iw3sp");
                 timer_loopExecutor.Enabled = true;
 
                 button_OpenCloseProcess.ForeColor = Color.Red;
                 button_OpenCloseProcess.Text = "Close process handle";
                 label_ProcessHandle.Text = "Process handle: " + memoryManager.GetProcessHandle();
+            }
+        }
+
+        private void button_Noclip_Click(object sender, EventArgs e)
+        {
+            if (isNoclipEnabled)
+            {
+                isNoclipEnabled = false;
+                button_Noclip.ForeColor = Color.Black;
+                button_Noclip.Text = "ON";
+            }
+            else
+            {
+                isNoclipEnabled = true;
+                button_Noclip.ForeColor = Color.Red;
+                button_Noclip.Text = "OFF";
             }
         }
     }
