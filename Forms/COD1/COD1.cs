@@ -16,7 +16,7 @@ namespace CoordinateManager.Forms.COD1
     {
         private readonly MemoryManagerFor32BitProcesses memoryManager;
         private int baseAddressOfPlayer = 0;
-        private float multiplierOfPlayerSpeed = 5.0f;
+        private float multiplierOfPlayerSpeed = 30.0f;
 
         private readonly int codeOfWKey = 87;
         private readonly int codeOfLeftMouseButton = 1;
@@ -46,22 +46,27 @@ namespace CoordinateManager.Forms.COD1
             }
         }
 
+        private float GetAngleInRadiansFromAngleInDegrees(float angleInDegrees)
+        {
+            return Convert.ToSingle((Math.PI / 180) * angleInDegrees);
+        }
+
         private void MovePlayer()
         {
             float yawAngleInDegrees = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + (0x2 * 0x4) + 0xAC, 4).ConvertBytesToFloatValue();
-            float xCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x14, 4).ConvertBytesToFloatValue();
-            float yCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x18, 4).ConvertBytesToFloatValue();
+            float xCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x18, 4).ConvertBytesToFloatValue();
+            float yCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x14, 4).ConvertBytesToFloatValue();
 
             if (KeyboardManager.IsKeyPushedDown(codeOfWKey))
             {
-                float sineOfYawAngle = Convert.ToSingle(Math.Sin(yawAngleInDegrees));
-                float cosineOfYawAngle = Convert.ToSingle(Math.Cos(yawAngleInDegrees));
+                float sineOfYawAngle = Convert.ToSingle(Math.Sin(GetAngleInRadiansFromAngleInDegrees(yawAngleInDegrees)));
+                float cosineOfYawAngle = Convert.ToSingle(Math.Cos(GetAngleInRadiansFromAngleInDegrees(yawAngleInDegrees)));
 
                 float newXCoordinate = xCoordinate - ((sineOfYawAngle * -1) * multiplierOfPlayerSpeed);
                 float newYCoordinate = yCoordinate + (cosineOfYawAngle * multiplierOfPlayerSpeed);
 
-                memoryManager.ConvertFloatValueToBytes(newXCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x14, 4);
-                memoryManager.ConvertFloatValueToBytes(newYCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x18, 4);
+                memoryManager.ConvertFloatValueToBytes(newXCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x18, 4);
+                memoryManager.ConvertFloatValueToBytes(newYCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x14, 4);
             }
         }
 
