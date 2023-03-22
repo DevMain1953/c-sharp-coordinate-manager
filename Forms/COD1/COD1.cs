@@ -16,7 +16,7 @@ namespace CoordinateManager.Forms.COD1
     {
         private readonly MemoryManagerFor32BitProcesses memoryManager;
         private int baseAddressOfPlayer = 0;
-        private float multiplierOfPlayerSpeed = 30.0f;
+        private float multiplierOfPlayerSpeed = 150.0f;
 
         private readonly int codeOfWKey = 87;
         private readonly int codeOfLeftMouseButton = 1;
@@ -36,12 +36,12 @@ namespace CoordinateManager.Forms.COD1
             float zCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x1C, 4).ConvertBytesToFloatValue();
             if (KeyboardManager.IsKeyPushedDown(codeOfLeftMouseButton))
             {
-                zCoordinate = zCoordinate + 5.0f;
+                zCoordinate = zCoordinate + 50.0f;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x1C, 4);
             }
             if (KeyboardManager.IsKeyPushedDown(codeOfRightMouseButton))
             {
-                zCoordinate = zCoordinate - 5.0f;
+                zCoordinate = zCoordinate - 50.0f;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x1C, 4);
             }
         }

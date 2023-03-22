@@ -16,7 +16,7 @@ namespace CoordinateManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.CODMW2.CODMW2());
+            Application.Run(new Forms.COD1.COD1());
         }
     }
 }
