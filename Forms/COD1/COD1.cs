@@ -16,11 +16,13 @@ namespace CoordinateManager.Forms.COD1
     {
         private readonly MemoryManagerFor32BitProcesses memoryManager;
         private int baseAddressOfPlayer = 0;
-        private float multiplierOfPlayerSpeed = 150.0f;
+        private float multiplierOfPlayerSpeed = 30.0f;
+        private float addendumForZCoordinate = 5.0f;
 
         private readonly int codeOfWKey = 87;
-        private readonly int codeOfLeftMouseButton = 1;
-        private readonly int codeOfRightMouseButton = 2;
+        private readonly int codeOfLeftShiftKey = 160;
+        private readonly int codeOfTildeKey = 192;
+        private readonly int codeOfCapsLockKey = 20;
 
         private bool isNoclipEnabled = false;
 
@@ -34,15 +36,29 @@ namespace CoordinateManager.Forms.COD1
         private void ManageZCoordinateOfPlayer()
         {
             float zCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x1C, 4).ConvertBytesToFloatValue();
-            if (KeyboardManager.IsKeyPushedDown(codeOfLeftMouseButton))
+            if (KeyboardManager.IsKeyPushedDown(codeOfTildeKey))
             {
-                zCoordinate = zCoordinate + 50.0f;
+                zCoordinate = zCoordinate + addendumForZCoordinate;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x1C, 4);
             }
-            if (KeyboardManager.IsKeyPushedDown(codeOfRightMouseButton))
+            if (KeyboardManager.IsKeyPushedDown(codeOfCapsLockKey))
             {
-                zCoordinate = zCoordinate - 50.0f;
+                zCoordinate = zCoordinate - addendumForZCoordinate;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x1C, 4);
+            }
+        }
+
+        private void IncreaseMovementVelocityOfPLayer()
+        {
+            if (KeyboardManager.IsKeyPushedDown(codeOfLeftShiftKey))
+            {
+                multiplierOfPlayerSpeed = 150.0f;
+                addendumForZCoordinate = 50.0f;
+            }
+            else
+            {
+                multiplierOfPlayerSpeed = 30.0f;
+                addendumForZCoordinate = 5.0f;
             }
         }
 
@@ -121,6 +137,7 @@ namespace CoordinateManager.Forms.COD1
             {
                 FreezeXYZVelocityOfPlayer();
                 ManageZCoordinateOfPlayer();
+                IncreaseMovementVelocityOfPLayer();
                 MovePlayer();
             }
         }
