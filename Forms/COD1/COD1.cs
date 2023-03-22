@@ -48,7 +48,7 @@ namespace CoordinateManager.Forms.COD1
             }
         }
 
-        private void IncreaseMovementVelocityOfPLayer()
+        private void IncreaseMovementVelocityOfPlayer()
         {
             if (KeyboardManager.IsKeyPushedDown(codeOfLeftShiftKey))
             {
@@ -137,7 +137,7 @@ namespace CoordinateManager.Forms.COD1
             {
                 FreezeXYZVelocityOfPlayer();
                 ManageZCoordinateOfPlayer();
-                IncreaseMovementVelocityOfPLayer();
+                IncreaseMovementVelocityOfPlayer();
                 MovePlayer();
             }
         }

@@ -53,7 +53,7 @@ namespace CoordinateManager.Forms.CODMW3
             return Convert.ToSingle((Math.PI / 180) * angleInDegrees);
         }
 
-        private void IncreaseMovementVelocityOfPLayer()
+        private void IncreaseMovementVelocityOfPlayer()
         {
             if (KeyboardManager.IsKeyPushedDown(codeOfLeftShiftKey))
             {
@@ -99,7 +99,7 @@ namespace CoordinateManager.Forms.CODMW3
             {
                 FreezeXYZVelocityOfPlayer();
                 ManageZCoordinateOfPlayer();
-                IncreaseMovementVelocityOfPLayer();
+                IncreaseMovementVelocityOfPlayer();
                 MovePlayer();
             }
         }
