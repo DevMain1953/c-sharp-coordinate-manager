@@ -37,6 +37,7 @@ namespace CoordinateManager.Forms.GTA3
             this.label4 = new System.Windows.Forms.Label();
             this.button_Noclip = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer_hotkeyHandler = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button_OpenCloseProcess
@@ -107,6 +108,12 @@ namespace CoordinateManager.Forms.GTA3
             this.label1.TabIndex = 10;
             this.label1.Text = "Noclip";
             // 
+            // timer_hotkeyHandler
+            // 
+            this.timer_hotkeyHandler.Enabled = true;
+            this.timer_hotkeyHandler.Interval = 1;
+            this.timer_hotkeyHandler.Tick += new System.EventHandler(this.timer_hotkeyHandler_Tick);
+            // 
             // GTA3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +144,7 @@ namespace CoordinateManager.Forms.GTA3
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button_Noclip;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer_hotkeyHandler;
     }
 }
 

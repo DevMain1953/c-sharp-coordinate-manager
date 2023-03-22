@@ -35,6 +35,7 @@ namespace CoordinateManager.Forms.COD4MW
             this.label_ProcessHandle = new System.Windows.Forms.Label();
             this.button_OpenCloseProcess = new System.Windows.Forms.Button();
             this.timer_loopExecutor = new System.Windows.Forms.Timer(this.components);
+            this.timer_hotkeyHandler = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button_Noclip
@@ -84,6 +85,12 @@ namespace CoordinateManager.Forms.COD4MW
             this.timer_loopExecutor.Interval = 1;
             this.timer_loopExecutor.Tick += new System.EventHandler(this.timer_loopExecutor_Tick);
             // 
+            // timer_hotkeyHandler
+            // 
+            this.timer_hotkeyHandler.Enabled = true;
+            this.timer_hotkeyHandler.Interval = 1;
+            this.timer_hotkeyHandler.Tick += new System.EventHandler(this.timer_hotkeyHandler_Tick);
+            // 
             // COD4MW
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,5 +116,6 @@ namespace CoordinateManager.Forms.COD4MW
         private System.Windows.Forms.Label label_ProcessHandle;
         private System.Windows.Forms.Button button_OpenCloseProcess;
         private System.Windows.Forms.Timer timer_loopExecutor;
+        private System.Windows.Forms.Timer timer_hotkeyHandler;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using MemoryManagement;
 using KeyboardManagement;
@@ -20,9 +21,10 @@ namespace CoordinateManager.Forms.GTA3
         private readonly int codeOfWKey = 87;
         private readonly int codeOfAKey = 65;
         private readonly int codeOfDKey = 68;
-        private readonly int codeOfLeftMouseButton = 1;
-        private readonly int codeOfRightMouseButton = 2;
+        private readonly int codeOfTildeKey = 192;
+        private readonly int codeOfCapsLockKey = 20;
         private readonly int codeOfNumpad7Key = 103;
+        private readonly int codeOfNumpad0Key = 96;
 
         private bool isFlyingCarEnabled = false;
         private bool isNoclipEnabled = false;
@@ -30,11 +32,11 @@ namespace CoordinateManager.Forms.GTA3
         private void ManageZVelocityOfCar()
         {
             memoryManager.ConvertFloatValueToBytes(0.0f).WriteBytesToAddress(baseAddressOfCar + 0x80, 4);
-            if (KeyboardManager.IsKeyPushedDown(codeOfLeftMouseButton))
+            if (KeyboardManager.IsKeyPushedDown(codeOfTildeKey))
             {
                 memoryManager.ConvertFloatValueToBytes(1.0f).WriteBytesToAddress(baseAddressOfCar + 0x80, 4);
             }
-            if (KeyboardManager.IsKeyPushedDown(codeOfRightMouseButton))
+            if (KeyboardManager.IsKeyPushedDown(codeOfCapsLockKey))
             {
                 memoryManager.ConvertFloatValueToBytes(-1.0f).WriteBytesToAddress(baseAddressOfCar + 0x80, 4);
             }
@@ -130,12 +132,12 @@ namespace CoordinateManager.Forms.GTA3
         private void ManageZCoordinateOfPlayer()
         {
             float zCoordinate = memoryManager.ReadBytesFromAddress(baseAddressOfPlayer + 0x3C, 4).ConvertBytesToFloatValue();
-            if (KeyboardManager.IsKeyPushedDown(codeOfLeftMouseButton))
+            if (KeyboardManager.IsKeyPushedDown(codeOfTildeKey))
             {
                 zCoordinate = zCoordinate + 1.0f;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x3C, 4);
             }
-            if (KeyboardManager.IsKeyPushedDown(codeOfRightMouseButton))
+            if (KeyboardManager.IsKeyPushedDown(codeOfCapsLockKey))
             {
                 zCoordinate = zCoordinate - 1.0f;
                 memoryManager.ConvertFloatValueToBytes(zCoordinate).WriteBytesToAddress(baseAddressOfPlayer + 0x3C, 4);
@@ -247,6 +249,15 @@ namespace CoordinateManager.Forms.GTA3
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             memoryManager.DetachFromProcess();
+        }
+
+        private void timer_hotkeyHandler_Tick(object sender, EventArgs e)
+        {
+            if (KeyboardManager.IsKeyPushedDown(codeOfNumpad0Key))
+            {
+                button_Noclip.PerformClick();
+                Thread.Sleep(500);
+            }
         }
     }
 }

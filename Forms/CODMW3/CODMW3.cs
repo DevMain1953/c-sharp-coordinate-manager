@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using MemoryManagement;
 using KeyboardManagement;
@@ -23,6 +23,7 @@ namespace CoordinateManager.Forms.CODMW3
         private readonly int codeOfLeftShiftKey = 160;
         private readonly int codeOfTildeKey = 192;
         private readonly int codeOfCapsLockKey = 20;
+        private readonly int codeOfNumpad0Key = 96;
 
         private bool isNoclipEnabled = false;
 
@@ -139,6 +140,15 @@ namespace CoordinateManager.Forms.CODMW3
                 button_OpenCloseProcess.ForeColor = Color.Red;
                 button_OpenCloseProcess.Text = "Close process handle";
                 label_ProcessHandle.Text = "Process handle: " + memoryManager.GetProcessHandle();
+            }
+        }
+
+        private void timer_hotkeyHandler_Tick(object sender, EventArgs e)
+        {
+            if (KeyboardManager.IsKeyPushedDown(codeOfNumpad0Key))
+            {
+                button_Noclip.PerformClick();
+                Thread.Sleep(500);
             }
         }
     }
