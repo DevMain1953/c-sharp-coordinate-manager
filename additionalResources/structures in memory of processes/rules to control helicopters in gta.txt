@@ -1,0 +1,5 @@
+For vehicles that have entry point but can't be controlled by player:
+(car_structure_base_address = boat value, vehicle_type_address = boat type) -> (enter the vehicle) -> (car_structure_base_address = original vehicle value, vehicle_type_address = original vehicle type) 
+
+For normal vehicles:
+(vehicle_type_address = boat type) -> (enter the vehicle) -> (vehicle_type_address = original vehicle type);

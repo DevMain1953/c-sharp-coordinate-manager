@@ -1,0 +1,17 @@
+3D rotation matrix for yaw angle:
+[[cosine(yaw angle), -sine(yaw angle), sine(roll angle)]]
+[[ sine(yaw angle), cosine(yaw angle), -sine(pith angle)]]
+[[                0,                 0,                 1]]
+
+yaw angle in radians = get arctangent of((3D rotation matrix for yaw angle[2, 1]), (3D rotation matrix for yaw angle[1, 1]));
+yaw angle in degress = (yaw angle in radians) / (180 / PI);
+
+custom rocket boost for car:
+speed = get square root from((velocity on x axis)^2 + (velocity on y axis)^2);
+
+new velocity on x axis = (velocity on x axis) - ((sine of yaw angle * -1) * multiplier);
+new velocity on y axis = (velocity on y axis) + (cosine of yaw angle * multiplier);
+
+to prevent flips of car:
+sine of roll angle = 0;
+-sine of pitch angle = 0;
