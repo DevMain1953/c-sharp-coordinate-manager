@@ -1,5 +1,5 @@
 struct player {
 	zCoordinate = player + 0x24;
 
-	noclip_mode = player = 0x0xAD54
+	noclip_mode = player = 0x0x00001C0C;
 };
