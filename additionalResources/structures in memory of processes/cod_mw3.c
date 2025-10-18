@@ -8,6 +8,7 @@ struct player {
 	zVector = player + 0x30;
 
 	yawAngleInDegrees = player + 0x110;
+	noclip_mode = player + 0x0000AE04;
 };
 
 structure_of_player = getAddressFrom(0x012C0748);
