@@ -7,3 +7,5 @@ struct player {
 
 	noclip_mode = player + <find_out>;
 };
+
+HP = 01E03278 + 0x1A0;
