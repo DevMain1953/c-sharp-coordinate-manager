@@ -5,7 +5,7 @@ struct player {
 
 	ZVector = player + 0x3C;
 
-	noclip_mode = player + <find_out>;
+	noclip_mode = player + 0x1C34(MAYBE);
 };
 
 HP = 01E03278 + 0x1A0;
